@@ -1,0 +1,497 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6B5DA0C6-0901-43BF-BA08-D3863AB23063}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>SmoreControlLibrary</RootNamespace>
+    <AssemblyName>SmoreControlLibrary</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\DLL\LogHelper\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="LogHelper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\bin\Debug\LogHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="MvCameraControl.Net, Version=3.4.0.1, Culture=neutral, PublicKeyToken=52fddfb3f94be800, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\MvCameraControl.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.30.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\SQL\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenCvSharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6adad1e807fea099, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\OpenCvSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="S7.Net, Version=0.13.0.0, Culture=neutral, PublicKeyToken=d5812d469e84c693, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\S7.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLControlLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\SQL\SQLControlLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EquipmentDriver\LightInterface.cs" />
+    <Compile Include="EquipmentDriver\PLCInterface.cs" />
+    <Compile Include="EquipmentDriver\PLCSiemens\SMPLCSiemens.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EquipmentDriver\PLCSiemens\SMPLCSiemens.Designer.cs">
+      <DependentUpon>SMPLCSiemens.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductStatistics\FormProductInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ProductStatistics\FormProductInfo.Designer.cs">
+      <DependentUpon>FormProductInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductStatistics\FormProductNumber.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ProductStatistics\FormProductNumber.Designer.cs">
+      <DependentUpon>FormProductNumber.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductStatistics\ShowData.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ProductStatistics\ShowData.Designer.cs">
+      <DependentUpon>ShowData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductStatistics\SingleShow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ProductStatistics\SingleShow.Designer.cs">
+      <DependentUpon>SingleShow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SMButton\SMButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SMButton\SMButton.Designer.cs">
+      <DependentUpon>SMButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SMCalendar\MyCalanderTime.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SMCalendar\MyCalanderTime.designer.cs">
+      <DependentUpon>MyCalanderTime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SMCalendar\MyFlowLayoutPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SMCalendar\MyFlowLayoutPanel.designer.cs">
+      <DependentUpon>MyFlowLayoutPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SMCalendar\MyLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SMCalendar\MyPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SMCalendar\MyPanel.designer.cs">
+      <DependentUpon>MyPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SMCalendar\MyTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SMCalendar\MyTextBox.designer.cs">
+      <DependentUpon>MyTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SMCalendar\MyTime.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SMCalendar\MyTime.designer.cs">
+      <DependentUpon>MyTime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SMCalendar\WaterTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SMCalendar\WaterTextBox.Designer.cs">
+      <DependentUpon>WaterTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SMCheckBox\UCCheckBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SMCheckBox\UCCheckBox.Designer.cs">
+      <DependentUpon>UCCheckBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SMControlBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SMControlBase.Designer.cs">
+      <DependentUpon>SMControlBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SMData\ProduceDataParse.cs" />
+    <Compile Include="SMData\SMDataWindow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SMData\SMDataWindow.Designer.cs">
+      <DependentUpon>SMDataWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SMForm\AccessOperate.cs" />
+    <Compile Include="SMForm\Database.cs" />
+    <Compile Include="SMForm\FormChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SMForm\FormChangePassword.Designer.cs">
+      <DependentUpon>FormChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SMForm\FormHelper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SMForm\FormHelper.Designer.cs">
+      <DependentUpon>FormHelper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SMForm\FormLogIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SMForm\FormLogIn.Designer.cs">
+      <DependentUpon>FormLogIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SMForm\FormMainBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SMForm\FormMainBase.Designer.cs">
+      <DependentUpon>FormMainBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SMForm\FormSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SMForm\FormSet.Designer.cs">
+      <DependentUpon>FormSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SMForm\SMCountSet.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SMForm\SMCountSet.Designer.cs">
+      <DependentUpon>SMCountSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SMForm\SMDataGridViewShow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SMForm\SMDataGridViewShow.Designer.cs">
+      <DependentUpon>SMDataGridViewShow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SMForm\SMLightSet.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SMForm\SMLightSet.Designer.cs">
+      <DependentUpon>SMLightSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SMForm\SMProductInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SMForm\SMProductInfo.Designer.cs">
+      <DependentUpon>SMProductInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SMForm\SMProductInfoSet.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SMForm\SMProductInfoSet.Designer.cs">
+      <DependentUpon>SMProductInfoSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SMForm\SMProductInfoSetTitle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SMForm\SMProductInfoSetTitle.Designer.cs">
+      <DependentUpon>SMProductInfoSetTitle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SMForm\SMSaveSet.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SMForm\SMSaveSet.Designer.cs">
+      <DependentUpon>SMSaveSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SMForm\SMThresholdSet.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SMForm\SMThresholdSet.Designer.cs">
+      <DependentUpon>SMThresholdSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SMForm\UserPasswordParse.cs" />
+    <Compile Include="SMImage\CLSDataParse.cs" />
+    <Compile Include="SMImage\OCRDataParse.cs" />
+    <Compile Include="SMImage\SMImageWindow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SMImage\SMImageWindow.Designer.cs">
+      <DependentUpon>SMImageWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SMImage\SMPictureEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SMImage\SMPictureEdit.Designer.cs">
+      <DependentUpon>SMPictureEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SMInfo\FormChangeInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SMInfo\FormChangeInfo.Designer.cs">
+      <DependentUpon>FormChangeInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SMInfo\SMInfoWindow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SMInfo\SMInfoWindow.Designer.cs">
+      <DependentUpon>SMInfoWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SMForm\SMSystemSet.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SMForm\SMSystemSet.Designer.cs">
+      <DependentUpon>SMSystemSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SMSplitLine\SMSplitLine_H.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SMSplitLine\SMSplitLine_H.Designer.cs">
+      <DependentUpon>SMSplitLine_H.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SMSplitLine\SMSplitLine_V.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SMSplitLine\SMSplitLine_V.Designer.cs">
+      <DependentUpon>SMSplitLine_V.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SqlClass.cs" />
+    <Compile Include="SystemConfig\IniFileOperate.cs" />
+    <Compile Include="SystemConfig\JsonFileParse.cs" />
+    <Compile Include="SystemConfig\XMLConfigParse.cs" />
+    <Compile Include="SystemConfig\XMLSerialize.cs" />
+    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ProductStatistics\FormProductInfo.resx">
+      <DependentUpon>FormProductInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductStatistics\FormProductNumber.resx">
+      <DependentUpon>FormProductNumber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductStatistics\ShowData.resx">
+      <DependentUpon>ShowData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductStatistics\SingleShow.resx">
+      <DependentUpon>SingleShow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SMButton\SMButton.resx">
+      <DependentUpon>SMButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SMCalendar\MyCalanderTime.resx">
+      <DependentUpon>MyCalanderTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SMCalendar\MyFlowLayoutPanel.resx">
+      <DependentUpon>MyFlowLayoutPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SMCalendar\MyPanel.resx">
+      <DependentUpon>MyPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SMCalendar\MyTextBox.resx">
+      <DependentUpon>MyTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SMCalendar\MyTime.resx">
+      <DependentUpon>MyTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SMCheckBox\UCCheckBox.resx">
+      <DependentUpon>UCCheckBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SMData\SMDataWindow.resx">
+      <DependentUpon>SMDataWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SMForm\FormChangePassword.resx">
+      <DependentUpon>FormChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SMForm\FormHelper.resx">
+      <DependentUpon>FormHelper.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SMForm\FormLogIn.resx">
+      <DependentUpon>FormLogIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SMForm\FormMainBase.resx">
+      <DependentUpon>FormMainBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SMForm\FormSet.resx">
+      <DependentUpon>FormSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SMForm\SMCountSet.resx">
+      <DependentUpon>SMCountSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SMForm\SMDataGridViewShow.resx">
+      <DependentUpon>SMDataGridViewShow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SMForm\SMLightSet.resx">
+      <DependentUpon>SMLightSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SMForm\SMProductInfo.resx">
+      <DependentUpon>SMProductInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SMForm\SMProductInfoSet.resx">
+      <DependentUpon>SMProductInfoSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SMForm\SMProductInfoSetTitle.resx">
+      <DependentUpon>SMProductInfoSetTitle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SMForm\SMSaveSet.resx">
+      <DependentUpon>SMSaveSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SMForm\SMThresholdSet.resx">
+      <DependentUpon>SMThresholdSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SMImage\SMImageWindow.resx">
+      <DependentUpon>SMImageWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SMImage\SMPictureEdit.resx">
+      <DependentUpon>SMPictureEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SMInfo\FormChangeInfo.resx">
+      <DependentUpon>FormChangeInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SMInfo\SMInfoWindow.resx">
+      <DependentUpon>SMInfoWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SMForm\SMSystemSet.resx">
+      <DependentUpon>SMSystemSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SMSplitLine\SMSplitLine_H.resx">
+      <DependentUpon>SMSplitLine_H.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SMSplitLine\SMSplitLine_V.resx">
+      <DependentUpon>SMSplitLine_V.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Config\ProduceData.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Config\Producepassword.xml" />
+    <Content Include="EXTDLL\MvCameraControl.Net.dll" />
+    <None Include="Resources\upLoadImg.png" />
+    <None Include="Resources\LeftPage.png" />
+    <None Include="Resources\RightPage.png" />
+    <Content Include="EXTDLL\System.Data.SQLite.dll" />
+    <None Include="Resources\datePicker.gif" />
+    <Content Include="Resources\first.png" />
+    <Content Include="Resources\front.png" />
+    <Content Include="Resources\last.png" />
+    <Content Include="Resources\next.png" />
+    <None Include="Resources\NG.png" />
+    <None Include="Resources\OK.png" />
+    <None Include="Resources\null.png" />
+    <Content Include="Resources\refreshList.png" />
+    <Content Include="Resources\保存.png" />
+    <None Include="Resources\切换.png" />
+    <Content Include="Resources\刷新.png" />
+    <Content Include="Resources\点光源.png" />
+    <Content Include="Resources\物料.png" />
+    <Content Include="Resources\系统设置.png" />
+    <Content Include="Resources\统计.png" />
+    <Content Include="Resources\默认_阈值告警.png" />
+    <Content Include="Resources\auto_off.png" />
+    <Content Include="Resources\auto_on.png" />
+    <Content Include="Resources\background.png" />
+    <Content Include="Resources\camera.png" />
+    <Content Include="Resources\camera_color.png" />
+    <Content Include="Resources\camera_disconnect.png" />
+    <Content Include="Resources\camera_off.png" />
+    <Content Include="Resources\camera_on.png" />
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Resources\checkbox00.png" />
+    <None Include="Resources\checkbox1.png" />
+    <Content Include="Resources\Chinese.png" />
+    <Content Include="Resources\close.png" />
+    <Content Include="Resources\closebtn.png" />
+    <Content Include="Resources\file.png" />
+    <Content Include="Resources\file_color.png" />
+    <Content Include="Resources\group.png" />
+    <Content Include="Resources\group_color.png" />
+    <Content Include="Resources\Help.png" />
+    <None Include="Resources\LogBackIamge.png" />
+    <Content Include="Resources\logo.ico" />
+    <Content Include="Resources\logo.jpg" />
+    <Content Include="Resources\max.png" />
+    <Content Include="Resources\maxNormal.png" />
+    <Content Include="Resources\menu.png" />
+    <Content Include="Resources\min.png" />
+    <None Include="Resources\no_selected.jpg" />
+    <None Include="Resources\output_icon.jpg" />
+    <None Include="Resources\selected.jpg" />
+    <Content Include="Resources\Set.png" />
+    <Content Include="Resources\Set_disable.png" />
+    <Content Include="Resources\SMLogo.png" />
+    <Content Include="Resources\English.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+  </Target>
+</Project>

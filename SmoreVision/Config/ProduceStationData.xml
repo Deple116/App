@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Root>
+    <ProduceStationData>
+        <CLSTotal>100</CLSTotal>
+        <CLSOK>90</CLSOK>
+        <CLSNG>10</CLSNG>
+	    <OCRTotal>100</OCRTotal>
+        <OCROK>90</OCROK>
+        <OCRNG>10</OCRNG>
+    </ProduceStationData>
+</Root>

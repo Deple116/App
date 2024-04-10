@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Root>
+    <ProduceData>
+        <Total>100</Total>
+        <OK>90</OK>
+        <NG>10</NG>
+    </ProduceData>
+</Root>

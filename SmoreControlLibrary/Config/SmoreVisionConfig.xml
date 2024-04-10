@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Root xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <System>
+    <ProjectName>AI视觉检测系统111</ProjectName>
+    <FullScreen>false</FullScreen>
+  </System>
+  <PLC>
+    <IP>127.0.0.1</IP>
+    <Port>10000</Port>
+	<Slot>0</Slot>
+    <Rack>1</Rack>
+  </PLC>
+  <SaveImage>
+    <Item Name="OK渲染图" Path="C:\Users\Administrator\Desktop\Img" ImageType=".png" SaveEnable="true" />
+    <Item Name="NG渲染图" Path="C:\Users\Administrator\Desktop\Img" ImageType=".png" SaveEnable="true" />
+    <Item Name="OK原图" Path="C:\Users\Administrator\Desktop\Img" ImageType=".png" SaveEnable="true" />
+    <Item Name="NG原图" Path="C:\Users\Administrator\Desktop\Img" ImageType=".png" SaveEnable="true" />
+  </SaveImage>
+  <SDK>
+    <Item Name="Station1" ConfigPath=".\\Models\\winrobs_pet.smartmore" GPU="true" DeviceID="0" TypeName="CLS" SolutionId="0" RunEnable="true" />
+    <Item Name="Station2" ConfigPath=".\\Models\\winrobs_pet.smartmore" GPU="true" DeviceID="0" TypeName="OCR" SolutionId="0" RunEnable="true" />
+  </SDK>
+</Root>
